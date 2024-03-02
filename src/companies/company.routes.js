@@ -1,13 +1,14 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import {
-    companyGet,
-    companyPost
+    companyZAGet,
+    companyPost,
+    companyTrajectoryGet
 } from "./company.controller.js"
 
 const router = Router();
 
-router.get("/", companyGet);
+router.get("/", companyTrajectoryGet);
 
 router.post(
     "/",
