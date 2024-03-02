@@ -1,0 +1,133 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "companyCollection",
+    "dateExported": "2024-03-02T23:44:30.562Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "92b47439-961a-489e-b162-bed88d04922d",
+            "colId": "ae164518-d31a-4a53-92b3-eba7a922da5f",
+            "containerId": "",
+            "name": "companyPost",
+            "url": "http://localhost:3000/interfer/v1/companies",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-01T09:38:36.809Z",
+            "modified": "2024-03-02T23:38:22.213Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUzYWJlYWE1YjRkYmFhM2E0ZmQzMjgiLCJpYXQiOjE3MDk0MTk1NDMsImV4cCI6MTcwOTQyMzE0M30.EOUo_t2xPN0M0aqTZNmF59Py_JSMBd9AkHEufPMHwJE"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"companyName\": \"EEE\",\n    \"description\": \"Aasdfsdad\",\n    \"impactLevel\": \"fsdfssdsdf\",\n    \"category\": \"sdfsadsdaf\",\n    \"trajectory\": 12\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1be9d61a-ae36-4c11-8557-f4e1a8bc33a8",
+            "colId": "ae164518-d31a-4a53-92b3-eba7a922da5f",
+            "containerId": "",
+            "name": "companiesA-ZGet",
+            "url": "http://localhost:3000/interfer/v1/companies/A-Z",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-02T10:47:31.623Z",
+            "modified": "2024-03-02T22:46:40.392Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUzYWJlYWE1YjRkYmFhM2E0ZmQzMjgiLCJpYXQiOjE3MDk0MTk1NDMsImV4cCI6MTcwOTQyMzE0M30.EOUo_t2xPN0M0aqTZNmF59Py_JSMBd9AkHEufPMHwJE"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7510bd8e-713a-42d2-95f0-dd633a2a6c54",
+            "colId": "ae164518-d31a-4a53-92b3-eba7a922da5f",
+            "containerId": "",
+            "name": "companiesZ-AGet",
+            "url": "http://localhost:3000/interfer/v1/companies/Z-A",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-03-02T21:46:54.475Z",
+            "modified": "2024-03-02T22:46:49.865Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUzYWJlYWE1YjRkYmFhM2E0ZmQzMjgiLCJpYXQiOjE3MDk0MTk1NDMsImV4cCI6MTcwOTQyMzE0M30.EOUo_t2xPN0M0aqTZNmF59Py_JSMBd9AkHEufPMHwJE"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "58003ab7-8579-4d9f-bad1-ff5b28837db2",
+            "colId": "ae164518-d31a-4a53-92b3-eba7a922da5f",
+            "containerId": "",
+            "name": "companiesTrajectoryGet",
+            "url": "http://localhost:3000/interfer/v1/companies/forTrajectory",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-02T21:47:27.093Z",
+            "modified": "2024-03-02T22:47:05.418Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUzYWJlYWE1YjRkYmFhM2E0ZmQzMjgiLCJpYXQiOjE3MDk0MTk1NDMsImV4cCI6MTcwOTQyMzE0M30.EOUo_t2xPN0M0aqTZNmF59Py_JSMBd9AkHEufPMHwJE"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "18a64040-f29b-4460-9783-3d293366cc2e",
+            "colId": "ae164518-d31a-4a53-92b3-eba7a922da5f",
+            "containerId": "",
+            "name": "companiesReport",
+            "url": "http://localhost:3000/interfer/v1/companies",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-03-02T21:48:22.846Z",
+            "modified": "2024-03-02T22:47:14.175Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUzYWJlYWE1YjRkYmFhM2E0ZmQzMjgiLCJpYXQiOjE3MDk0MTk1NDMsImV4cCI6MTcwOTQyMzE0M30.EOUo_t2xPN0M0aqTZNmF59Py_JSMBd9AkHEufPMHwJE"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c9036040-87c2-4bac-8fde-68b6f4c0b3a3",
+            "colId": "ae164518-d31a-4a53-92b3-eba7a922da5f",
+            "containerId": "",
+            "name": "companyPut",
+            "url": "http://localhost:3000/interfer/v1/companies/65e3b8568e777fbee1402724",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2024-03-02T23:12:35.228Z",
+            "modified": "2024-03-02T23:38:38.862Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUzYWJlYWE1YjRkYmFhM2E0ZmQzMjgiLCJpYXQiOjE3MDk0MjEyOTgsImV4cCI6MTcwOTQyNDg5OH0.IbifoEeRelvIOgafm2DsFNEilFMwZ7AvtJlr5y2NRYo"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"companyName\": \"ZZZ\",\n  \"description\": \"XXXXXXXXXXXXXX\",\n  \"impactLevel\": \"XXXXXXXXXXXXXX\",\n  \"category\": \"XXXXXXXXXXXX\",\n  \"trajectory\": 111\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

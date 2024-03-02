@@ -3,6 +3,35 @@ import xl from "excel4node";
 import path from "path";
 import Company from './company.model.js';
 
+
+// Registrar empresa
+export const companyPost = async (req, res) => {
+    const {companyName, description, impactLevel, category, trajectory} = req.body;
+
+    const company = new Company({companyName, description, impactLevel, category, trajectory});
+
+    await company.save();
+    res.status(200).json({
+        company
+    });
+}
+
+// Editar atos de empresa
+export const companyPut = async (req, res = response) => {
+    const { id } = req.params;
+    const { _id, ...resto} = req.body;
+
+    await Company.findByIdAndUpdate(id, resto);
+
+    const company = await Company.findOne({_id: id});
+
+    res.status(200).json({
+        msg: 'Company actualized'
+    });
+}
+
+
+
 /// Ordenar por nombre de A  - Z
 export const companyAZGet = async (req = request, res = response) => {
     const query = {state: true};
@@ -65,8 +94,8 @@ export const companiesExcelReport = async (req, res) => {
     var wb = new xl.Workbook();
     // Hoja
     const ws = wb.addWorksheet('Interfer companies');
-
-    const title = wb.createStyle({
+    // Estilo de encabezados
+    const headers = wb.createStyle({
         font: {
             bold: true
         },
@@ -76,12 +105,17 @@ export const companiesExcelReport = async (req, res) => {
             fgColor: '#FF9999'   
         }
     })
+    const comp = wb.createStyle({
+        font: {
+            bold: true
+        },
+    })
 
-    ws.cell(1,1).string("Company").style(title);
-    ws.cell(1,2).string("Description").style(title);
-    ws.cell(1,3).string("Impact level").style(title);
-    ws.cell(1,4).string("Category").style(title);
-    ws.cell(1,5).string("Trajectory").style(title);
+    ws.cell(1,1).string("Company").style(headers);
+    ws.cell(1,2).string("Description").style(headers);
+    ws.cell(1,3).string("Impact level").style(headers);
+    ws.cell(1,4).string("Category").style(headers);
+    ws.cell(1,5).string("Trajectory").style(headers);
 
     ws.column(1).setWidth(20);
     ws.column(2).setWidth(30);
@@ -93,7 +127,7 @@ export const companiesExcelReport = async (req, res) => {
     let rowIndex = 2;
 
     companies.forEach(company => {
-        ws.cell(rowIndex, 1).string(company.companyName);
+        ws.cell(rowIndex, 1).string(company.companyName).style(comp);
         ws.cell(rowIndex, 2).string(company.description);
         ws.cell(rowIndex, 3).string(company.impactLevel);
         ws.cell(rowIndex, 4).string(company.category);
@@ -103,6 +137,7 @@ export const companiesExcelReport = async (req, res) => {
 
 
     const excelPath = path.join('excelReports', 'InterferReport.xlsx');
+    
     console.log("-> Interfer excel report generated");
     
 
@@ -119,17 +154,5 @@ export const companiesExcelReport = async (req, res) => {
                 }
             });
         }
-    });
-}
-
-
-export const companyPost = async (req, res) => {
-    const {companyName, description, impactLevel, category, trajectory} = req.body;
-
-    const company = new Company({companyName, description, impactLevel, category, trajectory});
-
-    await company.save();
-    res.status(200).json({
-        company
     });
 }
